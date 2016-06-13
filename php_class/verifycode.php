@@ -7,8 +7,7 @@
  * @author    liu21st <liu21st@gmail.com>
  */
 class verifycode{
-  // private $charset = 'abcdefghkmnprstuvwxyzABCDEFGHKMNPRSTUVWXYZ23456789';    //随机因子
-    public $charset = '0123456789';          //随机因子
+    private $charset = 'abcdefghkmnprstuvwxyzABCDEFGHKMNPRSTUVWXYZ23456789';    //随机因子
     private $code;                           //验证码
     private $codelen = 4;                    //验证码长度
     private $width = 140;                    //宽度
@@ -20,7 +19,6 @@ class verifycode{
 
     //构造方法初始化
     public function __construct() {
-       //$this->font ='/apps/www/pinxianweb_oc/opencart/elephant.ttf';
        $this->font ='./elephant.ttf';
     }
 
@@ -68,7 +66,7 @@ class verifycode{
     }
 
     //对外生成
-    public function doimg() {
+    public function createimg() {
         $this->createBg();
         $this->createCode();
         $this->createLine();
