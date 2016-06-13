@@ -36,8 +36,7 @@ class verifycode{
         $color = imagecolorallocate($this->img, mt_rand(157,255), mt_rand(157,255), mt_rand(157,255));
         imagefilledrectangle($this->img,0,$this->height,$this->width,0,$color);
     }
-
-
+    
     //生成文字
     private function createFont() {
         $_x = $this->width / $this->codelen;
@@ -46,7 +45,7 @@ class verifycode{
             imagettftext($this->img,$this->fontsize,mt_rand(-30,30),$_x*$i+mt_rand(1,5),$this->height / 1.4,$this->fontcolor,$this->font,$this->code[$i]);
         }
     }
-
+    
     //生成线条、雪花
     private function createLine() {
         for ($i=0;$i<6;$i++) {
@@ -58,13 +57,14 @@ class verifycode{
             imagestring($this->img,mt_rand(1,5),mt_rand(0,$this->width),mt_rand(0,$this->height),'*',$color);
         }
     }
+    
     //输出
     private function outPut() {
         header('Content-type:image/png');
         imagepng($this->img);
         imagedestroy($this->img);
     }
-
+    
     //对外生成
     public function createimg() {
         $this->createBg();
@@ -73,8 +73,7 @@ class verifycode{
         $this->createFont();
         $this->outPut();
     }
-
-
+    
     //获取验证码
     public function getCode() {
         return md5($this->code);
