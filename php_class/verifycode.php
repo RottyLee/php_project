@@ -4,7 +4,7 @@
  * @category   ORG
  * @package  ORG
  * @subpackage  Util
- * @author    liu21st <liu21st@gmail.com>
+ * @author    rottyLee <Rotty@hotmail.com>
  */
 class verifycode{
     private $charset = 'abcdefghkmnprstuvwxyzABCDEFGHKMNPRSTUVWXYZ23456789';    //随机因子
